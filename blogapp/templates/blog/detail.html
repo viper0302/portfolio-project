@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{{ blog.title }}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href={% static "vendor/bootstrap/css/bootstrap.min.css" %} rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href={% static "css/blog-home.css" %} rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+
+    <a class="navbar-brand h4 ml-5" href="{% url 'home' %}"><h2>Justin Johnson</h2></a>
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link h5" href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link h5" href="https://www.facebook.com/shadotekk/">Facebook</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active h5" href="{% url 'allblogs' %}">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link h5" href="{% static 'Justin Johnson.pdf' %}">Resume</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Page Content -->
+<div class="container mt-5">
+
+    <div class="row">
+
+        <!-- Blog Entries Column -->
+        <div class="col-md-12">
+            <!-- Blog Post -->
+            <div class="card mb-4">
+                <div class="card-body">
+                <h2 class="card-title text-center mb-5 mt-5">{{ blog.title  }}</h2>
+                <img class="card-img-top img-rounded" src="{{ blog.blog_image.url }}" alt="Card image cap">
+
+                    <p class="card-text mt-5">{{ blog.body }}</p>
+                </div>
+                <div class="card-footer text-muted">
+                    {{ blog.pub_date }}
+                </div>
+            </div>
+
+            <!-- Blog Post -->
+
+
+
+
+            <!-- Pagination -->
+
+
+        </div>
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+
+<!-- Footer -->
+<footer class="py-5 bg-dark modal-footer mt-5">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Justin Johnson {% now 'Y' %}</p>
+    </div>
+    <!-- /.container -->
+</footer>
+
+<!-- Bootstrap core JavaScript -->
+<script src={% static "vendor/jquery/jquery.min.js" %}></script>
+<script src={% static "vendor/bootstrap/js/bootstrap.bundle.min.js"%}></script>
+
+</body>
+
+</html>
