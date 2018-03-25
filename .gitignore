@@ -13,4 +13,4 @@ db.sqlite3
 .idea/
 /portenv/
 portenv
-
+/portenv
